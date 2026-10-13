@@ -1,33 +1,33 @@
-@model wt_lab4_4mvc_valkovich.Models.Book
+п»ї@model wt_lab4_4mvc_valkovich.Models.Book
 
 @{
-    ViewData["Title"] = "Добавление книги";
+    ViewData["Title"] = "Р”РѕР±Р°РІР»РµРЅРёРµ РєРЅРёРіРё";
 }
 
 <div class="container">
     <div class="coquette-form-card mx-auto" style="max-width: 700px;">
 
-        <h2 class="coquette-form-title">Новая книга</h2>
+        <h2 class="coquette-form-title">РќРѕРІР°СЏ РєРЅРёРіР°</h2>
 
         <form asp-action="Create" method="post">
             @Html.AntiForgeryToken()
 
             <div class="mb-3">
                 <label asp-for="Title" class="form-label"></label>
-                <input asp-for="Title" class="form-control" placeholder="Например: Гордость и предубеждение" />
+                <input asp-for="Title" class="form-control" placeholder="РќР°РїСЂРёРјРµСЂ: Р“РѕСЂРґРѕСЃС‚СЊ Рё РїСЂРµРґСѓР±РµР¶РґРµРЅРёРµ" />
                 <span asp-validation-for="Title" class="text-danger small"></span>
             </div>
 
             <div class="mb-3">
                 <label asp-for="Author" class="form-label"></label>
-                <input asp-for="Author" class="form-control" placeholder="Джейн Остин" />
+                <input asp-for="Author" class="form-control" placeholder="Р”Р¶РµР№РЅ РћСЃС‚РёРЅ" />
                 <span asp-validation-for="Author" class="text-danger small"></span>
             </div>
 
             <div class="row">
                 <div class="col-md-6 mb-3">
                     <label asp-for="Genre" class="form-label"></label>
-                    <input asp-for="Genre" class="form-control" placeholder="Роман" />
+                    <input asp-for="Genre" class="form-control" placeholder="Р РѕРјР°РЅ" />
                 </div>
                 <div class="col-md-6 mb-3">
                     <label asp-for="Year" class="form-label"></label>
@@ -56,7 +56,7 @@
             <div class="mb-3">
                 <label asp-for="Description" class="form-label"></label>
                 <textarea asp-for="Description" class="form-control" rows="3"
-                          placeholder="Краткое описание книги..."></textarea>
+                          placeholder="РљСЂР°С‚РєРѕРµ РѕРїРёСЃР°РЅРёРµ РєРЅРёРіРё..."></textarea>
             </div>
 
             <div class="form-check mb-4">
@@ -66,10 +66,10 @@
 
             <div class="d-flex gap-2 flex-wrap">
                 <button type="submit" class="btn-coquette">
-                    Сохранить
+                    РЎРѕС…СЂР°РЅРёС‚СЊ
                 </button>
                 <a asp-action="Index" class="btn-coquette-outline">
-                    <i class="bi bi-arrow-left"></i> Назад
+                    <i class="bi bi-arrow-left"></i> РќР°Р·Р°Рґ
                 </a>
             </div>
         </form>

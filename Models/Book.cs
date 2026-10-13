@@ -1,4 +1,4 @@
-using System.ComponentModel.DataAnnotations;
+п»їusing System.ComponentModel.DataAnnotations;
 
 namespace wt_lab4_4mvc_valkovich.Models
 {
@@ -6,36 +6,36 @@ namespace wt_lab4_4mvc_valkovich.Models
     {
         public int Id { get; set; }
 
-        [Required(ErrorMessage = "Введите название книги")]
+        [Required(ErrorMessage = "Р’РІРµРґРёС‚Рµ РЅР°Р·РІР°РЅРёРµ РєРЅРёРіРё")]
         [StringLength(200, MinimumLength = 1)]
-        [Display(Name = "Название")]
+        [Display(Name = "РќР°Р·РІР°РЅРёРµ")]
         public string Title { get; set; } = string.Empty;
 
-        [Required(ErrorMessage = "Введите автора")]
-        [Display(Name = "Автор")]
+        [Required(ErrorMessage = "Р’РІРµРґРёС‚Рµ Р°РІС‚РѕСЂР°")]
+        [Display(Name = "РђРІС‚РѕСЂ")]
         public string Author { get; set; } = string.Empty;
 
-        [Display(Name = "Жанр")]
+        [Display(Name = "Р–Р°РЅСЂ")]
         public string Genre { get; set; } = string.Empty;
 
-        [Range(1, 5000, ErrorMessage = "Год должен быть от 1 до 5000")]
-        [Display(Name = "Год издания")]
+        [Range(1, 5000, ErrorMessage = "Р“РѕРґ РґРѕР»Р¶РµРЅ Р±С‹С‚СЊ РѕС‚ 1 РґРѕ 5000")]
+        [Display(Name = "Р“РѕРґ РёР·РґР°РЅРёСЏ")]
         public int Year { get; set; }
 
-        [Range(0, 100000, ErrorMessage = "Некорректная цена")]
-        [Display(Name = "Цена")]
+        [Range(0, 100000, ErrorMessage = "РќРµРєРѕСЂСЂРµРєС‚РЅР°СЏ С†РµРЅР°")]
+        [Display(Name = "Р¦РµРЅР°")]
         public decimal Price { get; set; }
 
-        [Display(Name = "В наличии")]
+        [Display(Name = "Р’ РЅР°Р»РёС‡РёРё")]
         public bool IsAvailable { get; set; }
 
-        [Display(Name = "Количество страниц")]
+        [Display(Name = "РљРѕР»РёС‡РµСЃС‚РІРѕ СЃС‚СЂР°РЅРёС†")]
         public int Pages { get; set; }
 
         [Display(Name = "ISBN")]
         public string ISBN { get; set; } = string.Empty;
 
-        [Display(Name = "Описание")]
+        [Display(Name = "РћРїРёСЃР°РЅРёРµ")]
         public string Description { get; set; } = string.Empty;
     }
 }

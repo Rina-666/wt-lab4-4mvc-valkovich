@@ -1,13 +1,13 @@
-@model wt_lab4_4mvc_valkovich.Models.Book
+п»ї@model wt_lab4_4mvc_valkovich.Models.Book
 
 @{
-    ViewData["Title"] = "Редактирование книги";
+    ViewData["Title"] = "Р РµРґР°РєС‚РёСЂРѕРІР°РЅРёРµ РєРЅРёРіРё";
 }
 
 <div class="container">
     <div class="coquette-form-card mx-auto" style="max-width: 700px;">
 
-        <h2 class="coquette-form-title">Редактирование</h2>
+        <h2 class="coquette-form-title">Р РµРґР°РєС‚РёСЂРѕРІР°РЅРёРµ</h2>
 
         <form asp-action="Edit" method="post">
             @Html.AntiForgeryToken()
@@ -67,10 +67,10 @@
 
             <div class="d-flex gap-2 flex-wrap">
                 <button type="submit" class="btn-coquette">
-                    Сохранить изменения
+                    РЎРѕС…СЂР°РЅРёС‚СЊ РёР·РјРµРЅРµРЅРёСЏ
                 </button>
                 <a asp-action="Index" class="btn-coquette-outline">
-                    <i class="bi bi-arrow-left"></i> Назад
+                    <i class="bi bi-arrow-left"></i> РќР°Р·Р°Рґ
                 </a>
             </div>
         </form>
