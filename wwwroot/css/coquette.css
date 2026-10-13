@@ -549,3 +549,12 @@ main {
 .coquette-divider {
     letter-spacing: 10px;
 }
+/* Убираем подчёркивание у кнопок coquette */
+.btn-coquette,
+.btn-coquette:hover,
+.btn-coquette:focus,
+.btn-coquette-outline,
+.btn-coquette-outline:hover,
+.btn-coquette-outline:focus {
+    text-decoration: none;
+}
