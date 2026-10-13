@@ -1,0 +1,81 @@
+﻿@model List<wt_lab4_4mvc_valkovich.Models.Book>
+
+    @{
+    ViewData["Title"] = "Каталог книг";
+    }
+
+    <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-3">
+            <h1 class="coquette-page-title mb-0">Каталог книг</h1>
+            <a asp-action="Create" class="btn-coquette">
+                Добавить книгу
+            </a>
+        </div>
+
+        <p class="text-center mb-4" style="color: var(--coq-text-soft);">
+            Всего книг: <span class="badge-coquette">@Model.Count</span>
+        </p>
+
+        <div class="coquette-divider">❀ ❀ ❀</div>
+
+        @if (Model.Count == 0)
+    {
+        <div class="coquette-empty">
+            <i class="bi bi-emoji-frown coquette-empty-icon"></i>
+            <h3 class="coquette-title">Пока пусто...</h3>
+            <p>Добавьте первую книгу в коллекцию ♡</p>
+            <a asp-action="Create" class="btn-coquette mt-3">Добавить книгу</a>
+        </div>
+    }
+    else
+    {
+        <div class="row g-4">
+            @foreach (var book in Model)
+            {
+            <div class="col-md-6 col-lg-4">
+                <div class="coquette-card">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                        <h5 class="coquette-card-title mb-0">@book.Title</h5>
+                        @if (book.IsAvailable)
+                            {
+                        <span class="badge-coquette badge-coquette-success">♡ в наличии</span>
+                            }
+                            else
+                            {
+                        <span class="badge-coquette badge-coquette-danger">✕ нет</span>
+                            }
+                    </div>
+
+                    <p class="coquette-card-author">
+                        <i class="bi bi-person-heart"></i> @book.Author
+                    </p>
+
+                    <p class="coquette-card-desc">@book.Description</p>
+
+                    <ul class="coquette-card-meta">
+                        <li><i class="bi bi-tag"></i> @book.Genre</li>
+                        <li><i class="bi bi-calendar-heart"></i> @book.Year г.</li>
+                        <li><i class="bi bi-file-text"></i> @book.Pages стр.</li>
+                    </ul>
+
+                    <div class="d-flex justify-content-between align-items-center mt-auto">
+                        <span class="coquette-price">@book.Price ₽</span>
+                        <div class="d-flex gap-2">
+                            <a asp-action="Details" asp-route-id="@book.Id"
+                               class="btn-coquette-outline btn-coquette-sm">
+                                <i class="bi bi-eye"></i>
+                            </a>
+                            <a asp-action="Edit" asp-route-id="@book.Id"
+                               class="btn-coquette-outline btn-coquette-sm">
+                                <i class="bi bi-pencil"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            }
+        </div>
+    }
+
+    </div>

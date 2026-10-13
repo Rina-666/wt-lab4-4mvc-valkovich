@@ -1,0 +1,547 @@
+﻿/* ============================================
+   🌸 COQUETTE CORE STYLE 🌸
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;700&family=Quicksand:wght@400;500;600;700&display=swap');
+
+:root {
+    --coq-pink-bg: #fff5f8;
+    --coq-pink-soft: #ffe4ec;
+    --coq-pink: #ffb6c1;
+    --coq-pink-strong: #ff8fab;
+    --coq-pink-deep: #e75480;
+    --coq-rose: #d4739a;
+    --coq-cream: #fffafc;
+    --coq-white: #ffffff;
+    --coq-text: #6b4a55;
+    --coq-text-soft: #a8808f;
+    --coq-shadow: rgba(231, 84, 128, 0.15);
+    --coq-lace: #f8d7e3;
+}
+
+/* ФОН */
+body.coquette-bg {
+    background-color: var(--coq-pink-bg);
+    background-image: radial-gradient(circle at 20% 30%, rgba(255, 182, 193, 0.15) 0%, transparent 40%), radial-gradient(circle at 80% 70%, rgba(255, 143, 171, 0.12) 0%, transparent 40%), radial-gradient(circle at 50% 50%, rgba(255, 228, 236, 0.4) 0%, transparent 60%);
+    font-family: 'Quicksand', 'Segoe UI', sans-serif;
+    color: var(--coq-text);
+    min-height: 100vh;
+    position: relative;
+}
+
+    body.coquette-bg::before {
+        content: '';
+        position: fixed;
+        inset: 0;
+        background-image: radial-gradient(circle, rgba(255, 143, 171, 0.08) 1px, transparent 1px);
+        background-size: 24px 24px;
+        pointer-events: none;
+        z-index: 0;
+    }
+
+main {
+    position: relative;
+    z-index: 1;
+}
+
+.coquette-title {
+    font-family: 'Dancing Script', cursive;
+    color: var(--coq-pink-deep);
+    font-weight: 700;
+}
+
+/* NAVBAR */
+.coquette-navbar {
+    background: linear-gradient(135deg, #ffe4ec 0%, #ffd1dc 50%, #ffe4ec 100%) !important;
+    border-bottom: 2px dashed var(--coq-pink);
+    box-shadow: 0 4px 20px var(--coq-shadow);
+    padding: 1rem 0;
+    position: relative;
+}
+
+    .coquette-navbar::after {
+        content: '🎀 🎀 🎀';
+        position: absolute;
+        top: -14px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 0.9rem;
+        letter-spacing: 4px;
+        background: var(--coq-pink-bg);
+        padding: 0 8px;
+    }
+
+    .coquette-navbar .navbar-brand {
+        font-family: 'Dancing Script', cursive;
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: var(--coq-pink-deep) !important;
+        text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+    }
+
+    .coquette-navbar .nav-link {
+        color: var(--coq-rose) !important;
+        font-weight: 600;
+        margin: 0 0.3rem;
+        border-radius: 20px;
+        padding: 0.4rem 1rem !important;
+        transition: all 0.3s ease;
+    }
+
+        .coquette-navbar .nav-link:hover {
+            background: var(--coq-white);
+            color: var(--coq-pink-deep) !important;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px var(--coq-shadow);
+        }
+
+/* HERO */
+.coquette-hero {
+    background: var(--coq-white);
+    border-radius: 30px;
+    padding: 3.5rem 2rem;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 10px 40px var(--coq-shadow);
+    border: 2px solid var(--coq-pink-soft);
+    overflow: hidden;
+}
+
+    .coquette-hero::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 20px;
+        background-image: radial-gradient(circle at 10px 20px, var(--coq-lace) 10px, transparent 11px);
+        background-size: 20px 20px;
+        background-repeat: repeat-x;
+    }
+
+    .coquette-hero::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 20px;
+        background-image: radial-gradient(circle at 10px 0px, var(--coq-lace) 10px, transparent 11px);
+        background-size: 20px 20px;
+        background-repeat: repeat-x;
+    }
+
+    .coquette-hero .coquette-icon {
+        font-size: 5rem;
+        color: var(--coq-pink-strong);
+        display: block;
+        margin-bottom: 1rem;
+        animation: float 3s ease-in-out infinite;
+    }
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.coquette-hero h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 4rem;
+    font-weight: 700;
+    color: var(--coq-pink-deep);
+    margin-bottom: 1rem;
+    line-height: 1.1;
+}
+
+.coquette-hero p {
+    font-size: 1.15rem;
+    color: var(--coq-text-soft);
+    max-width: 600px;
+    margin: 0 auto 2rem;
+    line-height: 1.7;
+}
+
+/* КНОПКИ */
+.btn-coquette {
+    background: linear-gradient(135deg, var(--coq-pink) 0%, var(--coq-pink-strong) 100%);
+    color: var(--coq-white) !important;
+    border: none;
+    border-radius: 50px;
+    padding: 0.75rem 2.5rem;
+    font-weight: 600;
+    font-size: 1.05rem;
+    box-shadow: 0 6px 20px rgba(255, 143, 171, 0.4);
+    transition: all 0.3s ease;
+}
+
+    .btn-coquette::before {
+        content: '🎀';
+        margin-right: 0.5rem;
+    }
+
+    .btn-coquette:hover {
+        transform: translateY(-3px) scale(1.03);
+        box-shadow: 0 10px 30px rgba(255, 143, 171, 0.6);
+        background: linear-gradient(135deg, var(--coq-pink-strong) 0%, var(--coq-pink-deep) 100%);
+    }
+
+.btn-coquette-outline {
+    background: var(--coq-white);
+    color: var(--coq-pink-deep) !important;
+    border: 2px solid var(--coq-pink);
+    border-radius: 50px;
+    padding: 0.5rem 1.5rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+    .btn-coquette-outline:hover {
+        background: var(--coq-pink-soft);
+        border-color: var(--coq-pink-strong);
+        transform: translateY(-2px);
+    }
+
+.btn-coquette-sm {
+    padding: 0.35rem 1rem;
+    font-size: 0.9rem;
+}
+
+/* КАРТОЧКИ */
+.coquette-card {
+    background: var(--coq-white);
+    border: 2px solid var(--coq-pink-soft);
+    border-radius: 24px;
+    padding: 1.5rem;
+    box-shadow: 0 6px 20px var(--coq-shadow);
+    transition: all 0.35s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+}
+
+    .coquette-card::before {
+        content: '♡';
+        position: absolute;
+        top: 12px;
+        right: 16px;
+        color: var(--coq-pink);
+        font-size: 1.3rem;
+        opacity: 0.5;
+    }
+
+    .coquette-card:hover {
+        transform: translateY(-8px) rotate(-0.5deg);
+        box-shadow: 0 15px 40px rgba(255, 143, 171, 0.35);
+        border-color: var(--coq-pink);
+    }
+
+.coquette-card-title {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.8rem;
+    color: var(--coq-pink-deep);
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+}
+
+.coquette-card-author {
+    color: var(--coq-rose);
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+}
+
+.coquette-card-desc {
+    color: var(--coq-text-soft);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    flex-grow: 1;
+    margin-bottom: 1rem;
+}
+
+.coquette-card-meta {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1rem;
+    font-size: 0.85rem;
+    color: var(--coq-text-soft);
+}
+
+    .coquette-card-meta li {
+        margin-bottom: 0.25rem;
+    }
+
+.coquette-price {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--coq-pink-deep);
+}
+
+/* БЕЙДЖИ */
+.badge-coquette {
+    background: linear-gradient(135deg, var(--coq-pink-soft), var(--coq-pink));
+    color: var(--coq-pink-deep);
+    border-radius: 50px;
+    padding: 0.35rem 0.9rem;
+    font-weight: 600;
+    font-size: 0.75rem;
+    border: 1px solid var(--coq-pink);
+}
+
+.badge-coquette-success {
+    background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+    color: #4a7c59;
+    border: 1px solid #a5d6a7;
+}
+
+.badge-coquette-danger {
+    background: linear-gradient(135deg, #ffebee, #ffcdd2);
+    color: #b71c5c;
+    border: 1px solid #ef9a9a;
+}
+
+/* ФОРМЫ */
+.coquette-form-card {
+    background: var(--coq-white);
+    border: 2px solid var(--coq-pink-soft);
+    border-radius: 30px;
+    padding: 2.5rem;
+    box-shadow: 0 10px 40px var(--coq-shadow);
+    position: relative;
+}
+
+    .coquette-form-card::before {
+        content: '🌸';
+        position: absolute;
+        top: -18px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 2rem;
+        background: var(--coq-pink-bg);
+        padding: 0 15px;
+    }
+
+.coquette-form-title {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.5rem;
+    color: var(--coq-pink-deep);
+    text-align: center;
+    margin-bottom: 2rem;
+    font-weight: 700;
+}
+
+.coquette-form-card .form-label {
+    color: var(--coq-rose);
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin-bottom: 0.4rem;
+}
+
+.coquette-form-card .form-control {
+    border: 2px solid var(--coq-pink-soft);
+    border-radius: 18px;
+    padding: 0.7rem 1rem;
+    background: var(--coq-cream);
+    color: var(--coq-text);
+    transition: all 0.3s ease;
+}
+
+    .coquette-form-card .form-control:focus {
+        border-color: var(--coq-pink-strong);
+        box-shadow: 0 0 0 0.25rem rgba(255, 143, 171, 0.25);
+        background: var(--coq-white);
+        outline: none;
+    }
+
+.coquette-form-card .form-check-input {
+    border: 2px solid var(--coq-pink);
+    width: 1.3rem;
+    height: 1.3rem;
+}
+
+    .coquette-form-card .form-check-input:checked {
+        background-color: var(--coq-pink-strong);
+        border-color: var(--coq-pink-strong);
+    }
+
+.coquette-form-card .text-danger {
+    color: var(--coq-pink-deep) !important;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+/* ФУТЕР */
+.coquette-footer {
+    background: linear-gradient(135deg, #ffe4ec 0%, #ffd1dc 100%);
+    color: var(--coq-rose);
+    text-align: center;
+    padding: 2rem 0;
+    border-top: 2px dashed var(--coq-pink);
+    margin-top: 4rem;
+    font-size: 0.95rem;
+    position: relative;
+}
+
+    .coquette-footer::before {
+        content: '♡ ♡ ♡';
+        position: absolute;
+        top: -12px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: var(--coq-pink-bg);
+        padding: 0 15px;
+        color: var(--coq-pink-strong);
+        letter-spacing: 6px;
+    }
+
+/* ЗАГОЛОВКИ СТРАНИЦ */
+.coquette-page-title {
+    font-family: 'Dancing Script', cursive;
+    font-size: 3.5rem;
+    color: var(--coq-pink-deep);
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 0.5rem;
+    position: relative;
+    display: inline-block;
+}
+
+    .coquette-page-title::before,
+    .coquette-page-title::after {
+        content: '❀';
+        color: var(--coq-pink);
+        font-size: 1.5rem;
+        margin: 0 1rem;
+        vertical-align: middle;
+        opacity: 0.7;
+    }
+
+.coquette-icon-lg {
+    font-size: 3rem;
+    color: var(--coq-pink-strong);
+    display: block;
+    margin-bottom: 1rem;
+}
+
+/* ДЕТАЛИ */
+.coquette-detail-card {
+    background: var(--coq-white);
+    border: 2px solid var(--coq-pink-soft);
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px var(--coq-shadow);
+}
+
+.coquette-detail-header {
+    background: linear-gradient(135deg, var(--coq-pink-soft), var(--coq-pink));
+    padding: 2rem;
+    text-align: center;
+    color: var(--coq-pink-deep);
+    position: relative;
+}
+
+    .coquette-detail-header::after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+        right: 0;
+        height: 20px;
+        background-image: radial-gradient(circle at 10px 0px, var(--coq-pink) 10px, transparent 11px);
+        background-size: 20px 20px;
+        background-repeat: repeat-x;
+    }
+
+    .coquette-detail-header h2 {
+        font-family: 'Dancing Script', cursive;
+        font-size: 3rem;
+        font-weight: 700;
+        margin: 0;
+    }
+
+.coquette-detail-body {
+    padding: 2.5rem;
+}
+
+    .coquette-detail-body strong {
+        color: var(--coq-rose);
+        font-weight: 600;
+    }
+
+/* ПУСТОЕ СОСТОЯНИЕ */
+.coquette-empty {
+    text-align: center;
+    padding: 4rem 2rem;
+    color: var(--coq-text-soft);
+}
+
+.coquette-empty-icon {
+    font-size: 5rem;
+    color: var(--coq-pink);
+    margin-bottom: 1rem;
+}
+
+/* РАЗДЕЛИТЕЛЬ */
+.coquette-divider {
+    text-align: center;
+    color: var(--coq-pink);
+    font-size: 1.5rem;
+    letter-spacing: 8px;
+    margin: 2rem 0;
+    opacity: 0.6;
+}
+
+/* СКРОЛЛБАР */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--coq-pink-bg);
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(var(--coq-pink), var(--coq-pink-strong));
+    border-radius: 10px;
+    border: 3px solid var(--coq-pink-bg);
+}
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: var(--coq-pink-deep);
+    }
+
+/* АДАПТИВ */
+@media (max-width: 768px) {
+    .coquette-hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .coquette-hero {
+        padding: 2.5rem 1.5rem;
+    }
+
+    .coquette-page-title {
+        font-size: 2.5rem;
+    }
+
+        .coquette-page-title::before,
+        .coquette-page-title::after {
+            display: none;
+        }
+
+    .coquette-detail-header h2 {
+        font-size: 2rem;
+    }
+
+    .coquette-navbar .navbar-brand {
+        font-size: 1.4rem;
+    }
+}
