@@ -7,6 +7,7 @@ namespace wt_lab4_4mvc_valkovich.Models
         public int Id { get; set; }
 
         [Required(ErrorMessage = "Введите название книги")]
+        [StringLength(200, MinimumLength = 1)]
         [Display(Name = "Название")]
         public string Title { get; set; } = string.Empty;
 
