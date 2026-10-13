@@ -545,3 +545,7 @@ main {
         font-size: 1.4rem;
     }
 }
+/* Небольшой апдейт стиля */
+.coquette-divider {
+    letter-spacing: 10px;
+}
