@@ -1,4 +1,4 @@
-using Microsoft.AspNetCore.Mvc;
+п»їusing Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using wt_lab4_4mvc_valkovich.Models;
 using wt_lab4_4mvc_valkovich.Data;
@@ -10,19 +10,19 @@ namespace wt_lab4_4mvc_valkovich.Pages.Products
         [BindProperty]
         public Book Book { get; set; } = new();
 
-        // Этот метод срабатывает, когда мы только открываем страницу (GET)
+        // Р­С‚РѕС‚ РјРµС‚РѕРґ СЃСЂР°Р±Р°С‚С‹РІР°РµС‚, РєРѕРіРґР° РјС‹ С‚РѕР»СЊРєРѕ РѕС‚РєСЂС‹РІР°РµРј СЃС‚СЂР°РЅРёС†Сѓ (GET)
         public IActionResult OnGet(int id)
         {
             var existingBook = BookStore.Books.FirstOrDefault(b => b.Id == id);
 
             if (existingBook == null)
-                return NotFound(); // Если книги с таким ID нет — ошибка 404
+                return NotFound(); // Р•СЃР»Рё РєРЅРёРіРё СЃ С‚Р°РєРёРј ID РЅРµС‚ вЂ” РѕС€РёР±РєР° 404
 
             Book = existingBook;
             return Page();
         }
 
-        // Этот метод срабатывает, когда мы нажимаем "Сохранить" (POST)
+        // Р­С‚РѕС‚ РјРµС‚РѕРґ СЃСЂР°Р±Р°С‚С‹РІР°РµС‚, РєРѕРіРґР° РјС‹ РЅР°Р¶РёРјР°РµРј "РЎРѕС…СЂР°РЅРёС‚СЊ" (POST)
         public IActionResult OnPost()
         {
             if (!ModelState.IsValid)
@@ -33,7 +33,7 @@ namespace wt_lab4_4mvc_valkovich.Pages.Products
             if (existingBook == null)
                 return NotFound();
 
-            // Обновляем все поля книги
+            // РћР±РЅРѕРІР»СЏРµРј РІСЃРµ РїРѕР»СЏ РєРЅРёРіРё
             existingBook.Title = Book.Title;
             existingBook.Author = Book.Author;
             existingBook.Genre = Book.Genre;
@@ -45,7 +45,7 @@ namespace wt_lab4_4mvc_valkovich.Pages.Products
             existingBook.Description = Book.Description;
             existingBook.IsAvailable = Book.IsAvailable;
 
-            // Возвращаемся в каталог
+            // Р’РѕР·РІСЂР°С‰Р°РµРјСЃСЏ РІ РєР°С‚Р°Р»РѕРі
             return RedirectToPage("./Index");
         }
         public IActionResult OnPostDelete(int id)
@@ -55,7 +55,7 @@ namespace wt_lab4_4mvc_valkovich.Pages.Products
             {
                 BookStore.Books.Remove(book);
             }
-            return RedirectToPage("./Index"); // Возвращаемся в каталог
+            return RedirectToPage("./Index"); // Р’РѕР·РІСЂР°С‰Р°РµРјСЃСЏ РІ РєР°С‚Р°Р»РѕРі
         }
     }
 }

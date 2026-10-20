@@ -1,4 +1,4 @@
-using Microsoft.AspNetCore.Mvc;
+п»їusing Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using wt_lab4_4mvc_valkovich.Models;
 using wt_lab4_4mvc_valkovich.Data;
@@ -7,19 +7,19 @@ namespace wt_lab4_4mvc_valkovich.Pages.Products
 {
     public class CreateModel : PageModel
     {
-        [BindProperty] // Привязывает данные из формы к этому свойству
+        [BindProperty] // РџСЂРёРІСЏР·С‹РІР°РµС‚ РґР°РЅРЅС‹Рµ РёР· С„РѕСЂРјС‹ Рє СЌС‚РѕРјСѓ СЃРІРѕР№СЃС‚РІСѓ
         public Book Book { get; set; } = new();
 
-        public void OnGet() { } // Просто показываем страницу
+        public void OnGet() { } // РџСЂРѕСЃС‚Рѕ РїРѕРєР°Р·С‹РІР°РµРј СЃС‚СЂР°РЅРёС†Сѓ
 
-        public IActionResult OnPost() // Обрабатываем отправку формы
+        public IActionResult OnPost() // РћР±СЂР°Р±Р°С‚С‹РІР°РµРј РѕС‚РїСЂР°РІРєСѓ С„РѕСЂРјС‹
         {
-            if (!ModelState.IsValid) return Page(); // Если ошибки валидации - вернуть форму
+            if (!ModelState.IsValid) return Page(); // Р•СЃР»Рё РѕС€РёР±РєРё РІР°Р»РёРґР°С†РёРё - РІРµСЂРЅСѓС‚СЊ С„РѕСЂРјСѓ
 
             Book.Id = BookStore.Books.Any() ? BookStore.Books.Max(b => b.Id) + 1 : 1;
             BookStore.Books.Add(Book);
 
-            return RedirectToPage("./Index"); // Переход на список
+            return RedirectToPage("./Index"); // РџРµСЂРµС…РѕРґ РЅР° СЃРїРёСЃРѕРє
         }
     }
 }

@@ -1,4 +1,4 @@
-using wt_lab4_4mvc_valkovich.Models;
+п»їusing wt_lab4_4mvc_valkovich.Models;
 
 namespace wt_lab4_4mvc_valkovich.Data
 {
@@ -7,27 +7,27 @@ namespace wt_lab4_4mvc_valkovich.Data
         public static List<Book> Books { get; } = new()
         {
             new Book {
-                Id = 1, Title = "Гордость и предубеждение", Author = "Джейн Остин", Genre = "Роман", Year = 1813, Price = 890, IsAvailable = true, Pages = 432, ISBN = "978-5-17-090000-1", Description = "Классический роман.",
-                ImageUrl = "/images/book1.jpg" // <-- Локальная картинка
+                Id = 1, Title = "Р“РѕСЂРґРѕСЃС‚СЊ Рё РїСЂРµРґСѓР±РµР¶РґРµРЅРёРµ", Author = "Р”Р¶РµР№РЅ РћСЃС‚РёРЅ", Genre = "Р РѕРјР°РЅ", Year = 1813, Price = 890, IsAvailable = true, Pages = 432, ISBN = "978-5-17-090000-1", Description = "РљР»Р°СЃСЃРёС‡РµСЃРєРёР№ СЂРѕРјР°РЅ.",
+                ImageUrl = "/images/book1.jpg" // <-- Р›РѕРєР°Р»СЊРЅР°СЏ РєР°СЂС‚РёРЅРєР°
             },
             new Book {
-                Id = 2, Title = "Джейн Эйр", Author = "Шарлотта Бронте", Genre = "Роман воспитания", Year = 1847, Price = 750, IsAvailable = true, Pages = 512, ISBN = "978-5-17-090000-2", Description = "История гувернантки.",
+                Id = 2, Title = "Р”Р¶РµР№РЅ Р­Р№СЂ", Author = "РЁР°СЂР»РѕС‚С‚Р° Р‘СЂРѕРЅС‚Рµ", Genre = "Р РѕРјР°РЅ РІРѕСЃРїРёС‚Р°РЅРёСЏ", Year = 1847, Price = 750, IsAvailable = true, Pages = 512, ISBN = "978-5-17-090000-2", Description = "РСЃС‚РѕСЂРёСЏ РіСѓРІРµСЂРЅР°РЅС‚РєРё.",
                 ImageUrl = "/images/book2.jpg"
             },
             new Book {
-                Id = 3, Title = "Грозовой перевал", Author = "Эмили Бронте", Genre = "Готический роман", Year = 1847, Price = 680, IsAvailable = false, Pages = 416, ISBN = "978-5-17-090000-3", Description = "Мрачная история любви.",
+                Id = 3, Title = "Р“СЂРѕР·РѕРІРѕР№ РїРµСЂРµРІР°Р»", Author = "Р­РјРёР»Рё Р‘СЂРѕРЅС‚Рµ", Genre = "Р“РѕС‚РёС‡РµСЃРєРёР№ СЂРѕРјР°РЅ", Year = 1847, Price = 680, IsAvailable = false, Pages = 416, ISBN = "978-5-17-090000-3", Description = "РњСЂР°С‡РЅР°СЏ РёСЃС‚РѕСЂРёСЏ Р»СЋР±РІРё.",
                 ImageUrl = "/images/book3.jpg"
             },
             new Book {
-                Id = 4, Title = "Маленькие женщины", Author = "Луиза Мэй Олкотт", Genre = "Драма", Year = 1868, Price = 620, IsAvailable = true, Pages = 384, ISBN = "978-5-17-090000-4", Description = "Тёплая история о сёстрах.",
+                Id = 4, Title = "РњР°Р»РµРЅСЊРєРёРµ Р¶РµРЅС‰РёРЅС‹", Author = "Р›СѓРёР·Р° РњСЌР№ РћР»РєРѕС‚С‚", Genre = "Р”СЂР°РјР°", Year = 1868, Price = 620, IsAvailable = true, Pages = 384, ISBN = "978-5-17-090000-4", Description = "РўС‘РїР»Р°СЏ РёСЃС‚РѕСЂРёСЏ Рѕ СЃС‘СЃС‚СЂР°С….",
                 ImageUrl = "/images/book4.jpg"
             },
             new Book {
-                Id = 5, Title = "Аня из Зелёных Мезонинов", Author = "Люси Мод Монтгомери", Genre = "Детская проза", Year = 1908, Price = 540, IsAvailable = true, Pages = 320, ISBN = "978-5-17-090000-5", Description = "Рыжеволосая сирота.",
+                Id = 5, Title = "РђРЅСЏ РёР· Р—РµР»С‘РЅС‹С… РњРµР·РѕРЅРёРЅРѕРІ", Author = "Р›СЋСЃРё РњРѕРґ РњРѕРЅС‚РіРѕРјРµСЂРё", Genre = "Р”РµС‚СЃРєР°СЏ РїСЂРѕР·Р°", Year = 1908, Price = 540, IsAvailable = true, Pages = 320, ISBN = "978-5-17-090000-5", Description = "Р С‹Р¶РµРІРѕР»РѕСЃР°СЏ СЃРёСЂРѕС‚Р°.",
                 ImageUrl = "/images/book5.jpg"
             },
             new Book {
-                Id = 6, Title = "Ребекка", Author = "Дафна дю Морье", Genre = "Триллер", Year = 1938, Price = 810, IsAvailable = false, Pages = 448, ISBN = "978-5-17-090000-6", Description = "Загадочная история.",
+                Id = 6, Title = "Р РµР±РµРєРєР°", Author = "Р”Р°С„РЅР° РґСЋ РњРѕСЂСЊРµ", Genre = "РўСЂРёР»Р»РµСЂ", Year = 1938, Price = 810, IsAvailable = false, Pages = 448, ISBN = "978-5-17-090000-6", Description = "Р—Р°РіР°РґРѕС‡РЅР°СЏ РёСЃС‚РѕСЂРёСЏ.",
                 ImageUrl = "/images/book6.jpg"
             }
         };
