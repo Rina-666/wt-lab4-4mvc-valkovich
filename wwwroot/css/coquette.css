@@ -50,7 +50,9 @@ main {
     font-weight: 700;
 }
 
-/* NAVBAR */
+/* ============================================
+   NAVBAR
+   ============================================ */
 .coquette-navbar {
     background: linear-gradient(135deg, #ffe4ec 0%, #ffd1dc 50%, #ffe4ec 100%) !important;
     border-bottom: 2px dashed var(--coq-pink);
@@ -95,18 +97,21 @@ main {
             box-shadow: 0 4px 12px var(--coq-shadow);
         }
 
-/* HERO */
+/* ============================================
+   HERO (Главный блок с видео)
+   ============================================ */
 .coquette-hero {
-    background: var(--coq-white);
-    border-radius: 30px;
-    padding: 3.5rem 2rem;
-    text-align: center;
     position: relative;
+    border-radius: 30px;
+    padding: 4rem 2rem;
+    text-align: center;
     box-shadow: 0 10px 40px var(--coq-shadow);
     border: 2px solid var(--coq-pink-soft);
-    overflow: hidden;
+    overflow: hidden; /* Обрезаем видео по краям */
+    background-color: var(--coq-white);
 }
 
+    /* Кружевные каймы (поверх видео) */
     .coquette-hero::before {
         content: '';
         position: absolute;
@@ -117,6 +122,7 @@ main {
         background-image: radial-gradient(circle at 10px 20px, var(--coq-lace) 10px, transparent 11px);
         background-size: 20px 20px;
         background-repeat: repeat-x;
+        z-index: 2;
     }
 
     .coquette-hero::after {
@@ -129,15 +135,49 @@ main {
         background-image: radial-gradient(circle at 10px 0px, var(--coq-lace) 10px, transparent 11px);
         background-size: 20px 20px;
         background-repeat: repeat-x;
+        z-index: 2;
     }
 
-    .coquette-hero .coquette-icon {
-        font-size: 5rem;
-        color: var(--coq-pink-strong);
-        display: block;
-        margin-bottom: 1rem;
-        animation: float 3s ease-in-out infinite;
-    }
+/* Видео на фоне */
+.hero-video-bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: 100%;
+    height: 100%;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+    object-fit: cover;
+    opacity: 0.5; /* Прозрачность 50% */
+}
+
+/* Белый слой поверх видео (чтобы текст не сливался) */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.5); /* 50% белого */
+    z-index: 1;
+}
+
+/* Контент поверх всех слоев */
+.hero-content {
+    position: relative;
+    z-index: 3;
+}
+
+/* Иконка, заголовок и текст */
+.coquette-hero .coquette-icon {
+    font-size: 5rem;
+    color: var(--coq-pink-strong);
+    display: block;
+    margin-bottom: 1rem;
+    animation: float 3s ease-in-out infinite;
+}
 
 @keyframes float {
     0%, 100% {
@@ -166,7 +206,63 @@ main {
     line-height: 1.7;
 }
 
-/* КНОПКИ */
+/* ============================================
+   БЛОК С ФИШКАМИ (Почему у нас уютно?)
+   ============================================ */
+.coquette-features {
+    background: linear-gradient(135deg, rgba(255, 228, 236, 0.6) 0%, rgba(255, 255, 255, 0.9) 100%);
+    border: 2px dashed var(--coq-pink);
+    border-radius: 30px;
+    padding: 2.5rem;
+    margin-top: 3rem;
+    box-shadow: 0 10px 30px var(--coq-shadow);
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 1rem;
+    background: var(--coq-white);
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(255, 143, 171, 0.1);
+    transition: transform 0.3s ease;
+}
+
+    .feature-item:hover {
+        transform: translateY(-5px);
+    }
+
+.feature-icon {
+    font-size: 2rem;
+    color: var(--coq-pink-deep);
+    background: var(--coq-pink-soft);
+    padding: 10px;
+    border-radius: 15px;
+}
+
+.feature-title {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.5rem;
+    color: var(--coq-pink-deep);
+    margin-bottom: 0;
+    font-weight: 700;
+}
+
+.feature-text {
+    font-size: 0.9rem;
+    color: var(--coq-text-soft);
+    margin: 0;
+}
+
+/* ============================================
+   КНОПКИ
+   ============================================ */
+.btn-coquette, .btn-coquette:hover, .btn-coquette:focus,
+.btn-coquette-outline, .btn-coquette-outline:hover, .btn-coquette-outline:focus {
+    text-decoration: none;
+}
+
 .btn-coquette {
     background: linear-gradient(135deg, var(--coq-pink) 0%, var(--coq-pink-strong) 100%);
     color: var(--coq-white) !important;
@@ -177,6 +273,7 @@ main {
     font-size: 1.05rem;
     box-shadow: 0 6px 20px rgba(255, 143, 171, 0.4);
     transition: all 0.3s ease;
+    display: inline-block;
 }
 
     .btn-coquette::before {
@@ -198,6 +295,7 @@ main {
     padding: 0.5rem 1.5rem;
     font-weight: 600;
     transition: all 0.3s ease;
+    display: inline-block;
 }
 
     .btn-coquette-outline:hover {
@@ -211,7 +309,9 @@ main {
     font-size: 0.9rem;
 }
 
-/* КАРТОЧКИ */
+/* ============================================
+   КАРТОЧКИ, БЕЙДЖИ, ФОРМЫ
+   ============================================ */
 .coquette-card {
     background: var(--coq-white);
     border: 2px solid var(--coq-pink-soft);
@@ -285,7 +385,6 @@ main {
     color: var(--coq-pink-deep);
 }
 
-/* БЕЙДЖИ */
 .badge-coquette {
     background: linear-gradient(135deg, var(--coq-pink-soft), var(--coq-pink));
     color: var(--coq-pink-deep);
@@ -308,7 +407,7 @@ main {
     border: 1px solid #ef9a9a;
 }
 
-/* ФОРМЫ */
+/* Формы */
 .coquette-form-card {
     background: var(--coq-white);
     border: 2px solid var(--coq-pink-soft);
@@ -378,7 +477,9 @@ main {
     font-weight: 500;
 }
 
-/* ФУТЕР */
+/* ============================================
+   ПРОЧЕЕ (Футер, заголовки, скроллбар)
+   ============================================ */
 .coquette-footer {
     background: linear-gradient(135deg, #ffe4ec 0%, #ffd1dc 100%);
     color: var(--coq-rose);
@@ -402,7 +503,6 @@ main {
         letter-spacing: 6px;
     }
 
-/* ЗАГОЛОВКИ СТРАНИЦ */
 .coquette-page-title {
     font-family: 'Dancing Script', cursive;
     font-size: 3.5rem;
@@ -431,7 +531,6 @@ main {
     margin-bottom: 1rem;
 }
 
-/* ДЕТАЛИ */
 .coquette-detail-card {
     background: var(--coq-white);
     border: 2px solid var(--coq-pink-soft);
@@ -476,7 +575,6 @@ main {
         font-weight: 600;
     }
 
-/* ПУСТОЕ СОСТОЯНИЕ */
 .coquette-empty {
     text-align: center;
     padding: 4rem 2rem;
@@ -489,17 +587,15 @@ main {
     margin-bottom: 1rem;
 }
 
-/* РАЗДЕЛИТЕЛЬ */
 .coquette-divider {
     text-align: center;
     color: var(--coq-pink);
     font-size: 1.5rem;
-    letter-spacing: 8px;
+    letter-spacing: 10px;
     margin: 2rem 0;
     opacity: 0.6;
 }
 
-/* СКРОЛЛБАР */
 ::-webkit-scrollbar {
     width: 12px;
 }
@@ -532,8 +628,7 @@ main {
         font-size: 2.5rem;
     }
 
-        .coquette-page-title::before,
-        .coquette-page-title::after {
+        .coquette-page-title::before, .coquette-page-title::after {
             display: none;
         }
 
@@ -545,17 +640,193 @@ main {
         font-size: 1.4rem;
     }
 }
-/* Небольшой апдейт стиля */
-.coquette-divider {
-    letter-spacing: 10px;
+/* ============================================
+   БЛОК С ДОСТИЖЕНИЯМИ (ПРОГРЕСС-БАРЫ)
+   ============================================ */
+.coquette-stats {
+    background: var(--coq-white);
+    border-radius: 30px;
+    padding: 3rem 2.5rem;
+    border: 2px solid var(--coq-pink-soft);
+    box-shadow: 0 10px 40px var(--coq-shadow);
 }
-/* Убираем подчёркивание у кнопок coquette */
-.btn-coquette,
-.btn-coquette:hover,
-.btn-coquette:focus,
-.btn-coquette-outline,
-.btn-coquette-outline:hover,
-.btn-coquette-outline:focus {
-    text-decoration: none;
+
+.stat-label {
+    font-weight: 600;
+    color: var(--coq-pink-deep);
+    font-size: 1.1rem;
 }
-/* auto-deploy test - 13.10 11:50 */
+
+    .stat-label i {
+        margin-right: 5px;
+    }
+
+.stat-value {
+    font-weight: 700;
+    color: var(--coq-rose);
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.5rem;
+}
+
+/* Контейнер для полосы */
+.coquette-progress {
+    height: 20px;
+    background-color: var(--coq-pink-bg);
+    border-radius: 50px;
+    overflow: hidden;
+    border: 1px solid var(--coq-pink-soft);
+}
+
+/* Контейнер для полосы */
+.coquette-progress {
+    height: 24px; /* Сделали чуть выше, чтобы влез текст */
+    background-color: var(--coq-pink-bg);
+    border-radius: 50px;
+    overflow: hidden;
+    border: 1px solid var(--coq-pink-soft);
+    position: relative;
+}
+
+    /* Сама заполняющаяся полоса */
+    .coquette-progress .progress-bar {
+        background: linear-gradient(90deg, var(--coq-pink) 0%, var(--coq-pink-deep) 100%);
+        border-radius: 50px;
+        transition: width 1.5s cubic-bezier(0.1, 0.8, 0.2, 1);
+        display: flex;
+        align-items: center;
+        justify-content: flex-end; /* Текст прижимается к правому краю полосы */
+        padding-right: 10px;
+        position: relative;
+    }
+
+/* Текст с процентами на самой полосе */
+.progress-text {
+    color: var(--coq-white);
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-shadow: 1px 1px 2px rgba(231, 84, 128, 0.5);
+    white-space: nowrap;
+}
+
+    /* Сама заполняющаяся полоса */
+    .coquette-progress .progress-bar {
+        background: linear-gradient(90deg, var(--coq-pink) 0%, var(--coq-pink-deep) 100%);
+        border-radius: 50px;
+        /* Плавная анимация заполнения */
+        transition: width 1.5s cubic-bezier(0.1, 0.8, 0.2, 1);
+    }
+
+
+/* Красивый круг с цифрой справа */
+.stat-circle {
+    width: 200px;
+    height: 200px;
+    background: linear-gradient(135deg, var(--coq-pink-soft) 0%, var(--coq-white) 100%);
+    border: 3px dashed var(--coq-pink);
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--coq-pink-deep);
+    animation: float 4s ease-in-out infinite;
+}
+
+    .stat-circle h2 {
+        font-family: 'Dancing Script', cursive;
+        font-size: 3.5rem;
+        color: var(--coq-pink-deep);
+    }
+
+/* ============================================
+   СТИЛИ ДЛЯ СТРАНИЦЫ DETAILS (ПРОСМОТР КНИГИ)
+   ============================================ */
+
+/* Красивая рамка для обложки */
+.book-cover-frame {
+    background: var(--coq-white);
+    border: 3px dashed var(--coq-pink);
+    border-radius: 20px;
+    padding: 15px;
+    transition: transform 0.3s ease;
+}
+
+    .book-cover-frame:hover {
+        transform: scale(1.02) rotate(1deg);
+        border-color: var(--coq-pink-deep);
+    }
+
+    .book-cover-frame img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+
+/* Список с характеристиками */
+.coquette-detail-list li {
+    font-size: 1.05rem;
+    margin-bottom: 12px;
+    color: var(--coq-text);
+    display: flex;
+    align-items: center;
+}
+
+.coquette-detail-list i {
+    color: var(--coq-pink-strong);
+    font-size: 1.2rem;
+    width: 30px; /* Чтобы иконки были ровно друг под другом */
+}
+
+.coquette-detail-list strong {
+    color: var(--coq-rose);
+    margin-right: 5px;
+}
+
+/* ============================================
+   БЛОК С СОТРУДНИКАМИ
+   ============================================ */
+.coquette-staff {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 228, 236, 0.5) 100%);
+    border-radius: 30px;
+    padding: 3rem 2rem;
+    border: 2px dashed var(--coq-pink);
+    box-shadow: 0 10px 30px var(--coq-shadow);
+}
+
+.staff-card {
+    transition: transform 0.3s ease;
+    padding: 10px;
+}
+
+    .staff-card:hover {
+        transform: translateY(-8px);
+    }
+
+.staff-photo {
+    width: 150px;
+    height: 150px;
+    object-fit: cover; /* Чтобы фото не растягивалось */
+    border-radius: 50%; /* Делает фото круглым */
+    border: 4px solid var(--coq-pink-soft); /* Розовая рамка */
+    box-shadow: 0 6px 15px var(--coq-shadow);
+    margin-bottom: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.staff-card:hover .staff-photo {
+    border-color: var(--coq-pink-deep);
+}
+
+.staff-name {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.6rem;
+    color: var(--coq-pink-deep);
+    font-weight: 700;
+    margin-bottom: 0.2rem;
+}
+
+.staff-role {
+    color: var(--coq-text-soft);
+    font-size: 0.9rem;
+    font-weight: 600;
+}

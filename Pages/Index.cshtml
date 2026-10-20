@@ -1,0 +1,188 @@
+﻿@page
+@{
+    ViewData["Title"] = "Главная";
+}
+
+<div class="container">
+    <!-- Главный блок с видео -->
+    <div class="coquette-hero mb-5">
+        <video autoplay loop muted playsinline class="hero-video-bg">
+            <source src="~/videos/cat.mp4" type="video/mp4">
+        </video>
+
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+            <i class="bi bi-book-half coquette-icon"></i>
+            <h1>Coquette Library</h1>
+            <p>
+                Добро пожаловать в нашу нежную библиотеку ♡<br />
+                Здесь живут любимые книги, розовые мечты и уютные истории.<br>
+            </p>
+            <a asp-page="/Products/Index" class="btn-coquette mt-3">
+                Перейти к каталогу
+            </a>
+        </div>
+    </div>
+
+    <!-- Блок "Почему у нас уютно?" -->
+    <div class="coquette-features mb-5">
+        <h3 class="coquette-title text-center mb-4" style="font-size: 2.5rem;">Почему у нас уютно?</h3>
+
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="feature-item h-100">
+                    <i class="bi bi-heart-fill feature-icon"></i>
+                    <div>
+                        <h5 class="feature-title">С любовью</h5>
+                        <p class="feature-text">Каждая книга выбрана с душой</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-item h-100">
+                    <i class="bi bi-stars feature-icon"></i>
+                    <div>
+                        <h5 class="feature-title">Уютная атмосфера</h5>
+                        <p class="feature-text">Розовый дизайн и мягкие шрифты</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-item h-100">
+                    <i class="bi bi-lightning-charge-fill feature-icon"></i>
+                    <div>
+                        <h5 class="feature-title">Быстро и просто</h5>
+                        <p class="feature-text">Добавляйте книги в один клик</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Блок с достижениями (Прогресс-бары) -->
+    <div class="coquette-stats mb-4">
+        <h3 class="coquette-title text-center mb-4" style="font-size: 2.5rem;">Наши достижения</h3>
+        <div class="row g-4 align-items-center">
+
+            <!-- Левая колонка со статистикой -->
+            <div class="col-lg-7">
+                <div class="stat-item mb-4">
+                    <div class="d-flex justify-content-between mb-1">
+                        <span class="stat-label"><i class="bi bi-book"></i> Прочитано книг</span>
+                    </div>
+                    <div class="progress coquette-progress">
+                        <div class="progress-bar" role="progressbar" style="width: 0%;" data-width="85%">
+                            <span class="progress-text">0%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stat-item mb-4">
+                    <div class="d-flex justify-content-between mb-1">
+                        <span class="stat-label"><i class="bi bi-heart"></i> Любимые авторы</span>
+                    </div>
+                    <div class="progress coquette-progress">
+                        <div class="progress-bar" role="progressbar" style="width: 0%;" data-width="92%">
+                            <span class="progress-text">0%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stat-item mb-4">
+                    <div class="d-flex justify-content-between mb-1">
+                        <span class="stat-label"><i class="bi bi-star"></i> Оценка пользователей</span>
+                    </div>
+                    <div class="progress coquette-progress">
+                        <div class="progress-bar" role="progressbar" style="width: 0%;" data-width="98%">
+                            <span class="progress-text">0%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Правая колонка с большой цифрой -->
+            <div class="col-lg-5 text-center">
+                <div class="stat-circle mx-auto shadow-sm">
+                    <h2 class="mb-0 fw-bold">1000+</h2>
+                    <p class="mb-0 small text-muted">Счастливых читателей</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- Блок с сотрудниками -->
+    <div class="coquette-staff mt-5 mb-5">
+        <h3 class="coquette-title text-center mb-4" style="font-size: 2.5rem;">Наши сотрудники</h3>
+
+        <div class="row g-4 justify-content-center">
+            <!-- Сотрудник 1 -->
+            <div class="col-6 col-md-3 text-center">
+                <div class="staff-card">
+                    <img src="/images/staff1.jpg" alt="Сотрудник 1" class="staff-photo" onerror="this.src='https://via.placeholder.com/150/ffb6c1/ffffff?text=Фото'">
+                    <h5 class="staff-name">Валькович Арина</h5>
+                    <p class="staff-role">Главный библиотекарь</p>
+                </div>
+            </div>
+
+            <!-- Сотрудник 2 -->
+            <div class="col-6 col-md-3 text-center">
+                <div class="staff-card">
+                    <img src="/images/staff2.jpg" alt="Сотрудник 2" class="staff-photo" onerror="this.src='https://via.placeholder.com/150/ffb6c1/ffffff?text=Фото'">
+                    <h5 class="staff-name">Финдрик Анна</h5>
+                    <p class="staff-role">Администратор</p>
+                </div>
+            </div>
+
+            <!-- Сотрудник 3 -->
+            <div class="col-6 col-md-3 text-center">
+                <div class="staff-card">
+                    <img src="/images/staff3.jpg" alt="Сотрудник 3" class="staff-photo" onerror="this.src='https://via.placeholder.com/150/ffb6c1/ffffff?text=Фото'">
+                    <h5 class="staff-name">Судинко Полина</h5>
+                    <p class="staff-role">Консультант</p>
+                </div>
+            </div>
+
+            <!-- Сотрудник 4 -->
+            <div class="col-6 col-md-3 text-center">
+                <div class="staff-card">
+                    <img src="/images/staff4.jpg" alt="Сотрудник 4" class="staff-photo" onerror="this.src='https://via.placeholder.com/150/ffb6c1/ffffff?text=Фото'">
+                    <h5 class="staff-name">Корбут Дана</h5>
+                    <p class="staff-role">Специалист по книгам</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const progressBars = document.querySelectorAll('.coquette-progress .progress-bar');
+
+            setTimeout(() => {
+                progressBars.forEach(bar => {
+                    const targetWidth = parseInt(bar.getAttribute('data-width'));
+                    const textElement = bar.querySelector('.progress-text');
+
+                    // 1. Анимация ширины полосы
+                    bar.style.width = targetWidth + '%';
+
+                    // 2. Анимация цифр
+                    let currentNumber = 0;
+                    const duration = 1500;
+                    const stepTime = Math.abs(Math.floor(duration / targetWidth));
+
+                    const timer = setInterval(() => {
+                        currentNumber += 1;
+                        textElement.textContent = currentNumber + '%';
+
+                        if (currentNumber >= targetWidth) {
+                            clearInterval(timer);
+                        }
+                    }, stepTime);
+                });
+            }, 300);
+        });
+    </script>
+}

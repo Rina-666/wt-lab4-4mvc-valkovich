@@ -1,0 +1,93 @@
+﻿@page
+@model wt_lab4_4mvc_valkovich.Pages.Products.EditModel
+@{
+    ViewData["Title"] = "Редактирование книги";
+}
+
+<div class="container">
+    <div class="coquette-form-card mx-auto" style="max-width: 700px;">
+        <h2 class="coquette-form-title">Редактирование</h2>
+
+        <form method="post">
+            @Html.AntiForgeryToken()
+
+            <!-- ВАЖНО: Скрытое поле для ID! Без него не будет понятно, какую книгу сохранять -->
+            <input type="hidden" asp-for="Book.Id" />
+
+            <div class="mb-3">
+                <label asp-for="Book.Title" class="form-label">Название</label>
+                <input asp-for="Book.Title" class="form-control" />
+                <span asp-validation-for="Book.Title" class="text-danger small"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Book.Author" class="form-label">Автор</label>
+                <input asp-for="Book.Author" class="form-control" />
+                <span asp-validation-for="Book.Author" class="text-danger small"></span>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label asp-for="Book.Genre" class="form-label">Жанр</label>
+                    <input asp-for="Book.Genre" class="form-control" />
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label asp-for="Book.Year" class="form-label">Год издания</label>
+                    <input asp-for="Book.Year" class="form-control" type="number" />
+                    <span asp-validation-for="Book.Year" class="text-danger small"></span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label asp-for="Book.Price" class="form-label">Цена</label>
+                    <input asp-for="Book.Price" class="form-control" type="number" step="0.01" />
+                    <span asp-validation-for="Book.Price" class="text-danger small"></span>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label asp-for="Book.Pages" class="form-label">Количество страниц</label>
+                    <input asp-for="Book.Pages" class="form-control" type="number" />
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label asp-for="Book.ISBN" class="form-label">ISBN</label>
+                    <input asp-for="Book.ISBN" class="form-control" />
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label asp-for="Book.ImageUrl" class="form-label">Ссылка на обложку</label>
+                    <input asp-for="Book.ImageUrl" class="form-control" />
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Book.Description" class="form-label">Описание</label>
+                <textarea asp-for="Book.Description" class="form-control" rows="3"></textarea>
+            </div>
+
+            <div class="form-check mb-4">
+                <input type="hidden" asp-for="Book.IsAvailable" value="false" />
+                <input asp-for="Book.IsAvailable" class="form-check-input" />
+                <label asp-for="Book.IsAvailable" class="form-check-label" style="color: var(--coq-rose); font-weight: 600;">В наличии</label>
+            </div>
+
+            <div class="d-flex justify-content-between align-items-center mt-4 flex-wrap gap-2">
+                <div class="d-flex gap-2">
+                    <button type="submit" class="btn-coquette">Сохранить изменения</button>
+                    <a asp-page="./Index" class="btn-coquette-outline">Назад</a>
+                </div>
+
+                <button type="submit" asp-page-handler="Delete" asp-route-id="@Model.Book.Id"
+                        class="btn btn-outline-danger rounded-pill px-4"
+                        onclick="return confirm('Вы уверены, что хотите удалить эту книгу? 🥺');">
+                    <i class="bi bi-trash"></i> Удалить
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

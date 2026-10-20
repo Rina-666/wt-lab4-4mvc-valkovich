@@ -1,0 +1,57 @@
+﻿@page
+@model wt_lab4_4mvc_valkovich.Pages.Products.IndexModel
+@{
+    ViewData["Title"] = "Каталог";
+}
+
+<div class="container">
+    <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-3">
+        <h1 class="coquette-page-title mb-0">Каталог книг</h1>
+        <a asp-page="/Products/Create" class="btn-coquette">Добавить книгу</a>
+    </div>
+
+    <p class="text-center mb-4" style="color: var(--coq-text-soft);">
+        Всего книг: <span class="badge-coquette">@Model.Books.Count</span>
+    </p>
+
+    <div class="coquette-divider">❀ ❀ ❀</div>
+
+    <div class="row g-4">
+        @foreach (var book in Model.Books)
+        {
+        <div class="col-12 col-md-6 col-lg-4">
+            <div class="coquette-card">
+             
+                <div class="d-flex justify-content-between align-items-start mb-2">
+                    <h5 class="coquette-card-title mb-0">@book.Title</h5>
+                    @if (book.IsAvailable)
+                        {
+                    <span class="badge-coquette badge-coquette-success">♡ в наличии</span>
+                        }
+                        else
+                        {
+                    <span class="badge-coquette badge-coquette-danger">✕ нет</span>
+                        }
+                </div>
+
+                <p class="coquette-card-author"><i class="bi bi-person-heart"></i> @book.Author</p>
+                <p class="coquette-card-desc">@book.Description</p>
+
+                <ul class="coquette-card-meta">
+                    <li><i class="bi bi-tag"></i> @book.Genre</li>
+                    <li><i class="bi bi-calendar-heart"></i> @book.Year г.</li>
+                    <li><i class="bi bi-file-text"></i> @book.Pages стр.</li>
+                </ul>
+
+                <div class="d-flex justify-content-between align-items-center mt-auto pt-2">
+                    <span class="coquette-price">@book.Price ₽</span>
+                    <div class="d-flex gap-2">
+                        <a asp-page="/Products/Details" asp-route-id="@book.Id" class="btn-coquette-outline btn-coquette-sm" title="Подробнее"><i class="bi bi-eye"></i></a>
+                        <a asp-page="/Products/Edit" asp-route-id="@book.Id" class="btn-coquette-outline btn-coquette-sm" title="Редактировать"><i class="bi bi-pencil"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        }
+    </div>
+</div>

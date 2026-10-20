@@ -1,0 +1,75 @@
+﻿@page
+@model wt_lab4_4mvc_valkovich.Pages.Products.DetailsModel
+@{
+    ViewData["Title"] = "Подробности";
+}
+
+<div class="container py-4">
+    <div class="coquette-detail-card mx-auto" style="max-width: 900px;">
+
+        <!-- Шапка с названием -->
+        <div class="coquette-detail-header">
+            <h2>@Model.Book?.Title</h2>
+        </div>
+
+        <div class="coquette-detail-body">
+            <div class="row">
+
+                <!-- ЛЕВАЯ КОЛОНКА: Рамка для фото -->
+                <div class="col-md-5 mb-4 mb-md-0 text-center">
+                    <div class="book-cover-frame">
+                        @if (!string.IsNullOrEmpty(Model.Book?.ImageUrl))
+    {
+                        <img src="@Model.Book.ImageUrl" alt="Обложка книги" class="img-fluid rounded-3 shadow-sm" style="max-height: 400px; width: 100%; object-fit: cover;">
+    }
+    else
+    {
+                        <div class="d-flex flex-column align-items-center justify-content-center bg-light" style="height: 300px; border-radius: 15px;">
+                            <i class="bi bi-image text-muted" style="font-size: 4rem;"></i>
+                            <p class="text-muted mt-2">Нет обложки</p>
+                        </div>
+    }
+                        <p class="text-muted small mt-2">Обложка книги</p>
+                    </div>
+                </div>
+
+                <!-- ПРАВАЯ КОЛОНКА: Вся информация -->
+                <div class="col-md-7">
+                    <ul class="list-unstyled coquette-detail-list">
+                        <li><i class="bi bi-person-heart"></i> <strong>Автор:</strong> @Model.Book?.Author</li>
+                        <li><i class="bi bi-tag"></i> <strong>Жанр:</strong> @Model.Book?.Genre</li>
+                        <li><i class="bi bi-calendar-heart"></i> <strong>Год издания:</strong> @Model.Book?.Year г.</li>
+                        <li><i class="bi bi-file-text"></i> <strong>Страниц:</strong> @Model.Book?.Pages</li>
+                        <li><i class="bi bi-upc-scan"></i> <strong>ISBN:</strong> @Model.Book?.ISBN</li>
+                        <li>
+                            <i class="bi bi-info-circle"></i> <strong>Статус:</strong>
+                            @if (Model.Book?.IsAvailable == true)
+                            {
+                            <span class="badge-coquette badge-coquette-success ms-2">♡ в наличии</span>
+                            }
+                            else
+                            {
+                            <span class="badge-coquette badge-coquette-danger ms-2">✕ нет</span>
+                            }
+                        </li>
+                    </ul>
+
+                    <hr class="my-4" style="border-color: var(--coq-pink-soft);">
+
+                    <div class="mb-4">
+                        <h5 class="coquette-card-title mb-2">Описание</h5>
+                        <p class="text-muted">@Model.Book?.Description</p>
+                    </div>
+
+                    <div class="d-flex justify-content-between align-items-center mt-4">
+                        <span class="coquette-price">@Model.Book?.Price ₽</span>
+                        <a asp-page="./Index" class="btn-coquette-outline">
+                            <i class="bi bi-arrow-left"></i> Назад к списку
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

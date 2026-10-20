@@ -37,5 +37,8 @@ namespace wt_lab4_4mvc_valkovich.Models
 
         [Display(Name = "Описание")]
         public string Description { get; set; } = string.Empty;
+
+        [Display(Name = "Ссылка на обложку")]
+        public string ImageUrl { get; set; } = string.Empty;
     }
 }

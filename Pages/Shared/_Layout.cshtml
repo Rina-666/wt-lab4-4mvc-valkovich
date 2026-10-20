@@ -17,7 +17,8 @@
     <header>
         <nav class="navbar navbar-expand-lg coquette-navbar">
             <div class="container">
-                <a class="navbar-brand" asp-controller="Home" asp-action="Index">
+                <!-- Ссылка на главную -->
+                <a class="navbar-brand" asp-page="/Index">
                     <i class="bi bi-book-half"></i> Coquette Library
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
@@ -26,17 +27,20 @@
                 <div class="collapse navbar-collapse" id="nav">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
-                            <a class="nav-link" asp-controller="Home" asp-action="Index">
+                            <!-- Ссылка на главную -->
+                            <a class="nav-link" asp-page="/Index">
                                 <i class="bi bi-house-heart"></i> Главная
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" asp-controller="Book" asp-action="Index">
+                            <!-- Ссылка на каталог (страница Products/Index) -->
+                            <a class="nav-link" asp-page="/Products/Index">
                                 <i class="bi bi-journal-bookmark"></i> Каталог
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" asp-controller="Book" asp-action="Create">
+                            <!-- Ссылка на добавление (страница Products/Create) -->
+                            <a class="nav-link" asp-page="/Products/Create">
                                 <i class="bi bi-plus-circle"></i> Добавить
                             </a>
                         </li>
@@ -52,7 +56,8 @@
 
     <footer class="coquette-footer">
         <div class="container">
-            <small>♡ Сделано с любовью · Coquette Library · WT-4 ASP.NET Core MVC (Валькович) ♡</small>
+            <!-- Изменил WT-4 MVC на WT-5 Razor Pages -->
+            <small>♡ Сделано с любовью · Coquette Library · WT-5 Razor Pages (Валькович) ♡</small>
         </div>
     </footer>
 
